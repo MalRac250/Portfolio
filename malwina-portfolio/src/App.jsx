@@ -242,7 +242,7 @@ export default function App() {
         <div className="nav__inner">
           <div className="nav__brand">
             <div className="logo-mark">
-              <img src="public/images/logo.png" alt="Logo" />
+              <img src="/images/logo.png" alt="Logo" />
             </div>
             <div className="nav__brand-text">
               <span className="nav__brand-name">Malwina</span>
@@ -549,7 +549,7 @@ export default function App() {
         <div className="footer__inner">
           <div className="footer__brand">
             <div className="logo-mark">
-              <img src="public/images/logo.png" alt="Logo" />
+              <img src="/images/logo.png" alt="Logo" />
             </div>
             <span className="footer__name">Malwina</span>
           </div>
