@@ -5,73 +5,101 @@ import "./App.css";
 /* ─── DATA ───────────────────────────────────────────────── */
 const NAV_LINKS = ["Home", "Projects", "Skills", "Background", "Contact", "Resume"];
 
-const STATS = [
-  { value: "15+", label: "Projects Built" },
-  { value: "94%", label: "Model Accuracy" },
-  { value: "3",   label: "Research Papers" },
-  { value: "8+",  label: "Languages & Tools" },
-];
-
 const PROJECTS = [
   {
-    name: "NeuroViz — Brain Signal Classifier",
+    name: "Euclid Space Vision - ESA",
     featured: true,
-    tags: ["Python", "TensorFlow", "React", "SQL"],
-    desc: "An end-to-end pipeline that processes raw EEG signals, classifies cognitive states with 94% accuracy, and streams results to an interactive real-time dashboard.",
+    tags: ["Python", "NumPy", "Matplotlib", "AstroPy"],
+    desc: "Developed image-processing pipelines for ESA (European Space Agency) Euclid telescope data to enhance gravitational lens features and improve AI-based lens detection from astronomical FITS images.",
     image: "/images/banner.png",
-    year: "2024",
+    year: "2025",
+    link: "https://docs.google.com/document/d/1aRetpVAUKkl1BKiacXXt1T5HEE9hRifNhQBvIjQF_eU/edit?usp=sharing",
   },
   {
-    name: "AstroMap",
-    tags: ["C++", "Python", "SQL"],
-    desc: "Interactive star-chart tool that queries NASA exoplanet archives and renders 3-D sky maps in the browser.",
+    name: "Ocean Climate Analysis",
+    tags: ["Python", "Pandas", "Matplotlib", "Data Analysis"],
+    desc: "Data analysis project exploring the impact of ocean climate factors on coral reef health and marine biodiversity through visualization and forecasting.",
     icon: "",
-    year: "2024",
+    year: "2025",
+    link: "https://docs.google.com/document/d/1jQIgYv940vRKs7Ut79XQYQ5Rn2jXLZjfELwviIwloKI/edit?usp=sharing",
   },
   {
-    name: "CipherScan",
-    tags: ["Python", "React", "Node.js"],
-    desc: "Automated vulnerability scanner that parses network traffic and highlights anomalies using ML clustering.",
+    name: "PSV Popularity Visualiser",
+    tags: ["React", "Python", "AI", "Data Visualization"],
+    desc: "Interactive web dashboard for PSV Eindhoven that visualises player popularity using football data, social media engagement, fan sentiment, and media attention.",
     icon: "",
-    year: "2023",
+    year: "2025",
+    link: "https://stichtingfontys-my.sharepoint.com/personal/536517_student_fontys_nl/_layouts/15/stream.aspx?id=%2Fpersonal%2F536517%5Fstudent%5Ffontys%5Fnl%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files%2FVideo%2E791217787%2E595254%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E13e02e49%2D9bd3%2D4530%2D949c%2Da729cd1b8f03",
   },
   {
-    name: "GeneFlow",
-    tags: ["R", "Python", "SQL"],
-    desc: "Bioinformatics pipeline for differential gene expression analysis across RNA-seq datasets.",
+    name: "PITS - Public Information Trust System",
+    tags: ["Next.js", "React", "UI/UX", "Figma"],
+    desc: "Designed and developed the frontend and user experience for a public trust platform focused on content integrity, provenance tracking, and cryptographic verification.",
     icon: "",
-    year: "2023",
+    year: "2026",
+    link: "https://your-pits-project-link-here.com",
   },
 ];
 
 const SKILLS = [
-  { category: "Data Analysis",  icon: "", items: [
-    { name: "Python",  pct: 95 },
-    { name: "R",       pct: 80 },
-    { name: "SQL",     pct: 88 },
-    { name: "Pandas",  pct: 90 },
-    { name: "NumPy",   pct: 85 },
-  ]},
-  { category: "Full-Stack", icon: "", items: [
-    { name: "React",      pct: 85 },
-    { name: "Next.js",    pct: 75 },
-    { name: "Node.js",    pct: 78 },
-    { name: "TypeScript", pct: 72 },
-    { name: "Tailwind",   pct: 82 },
-  ]},
-  { category: "Tools & Others", icon: "", items: [
-    { name: "Git",      pct: 92 },
-    { name: "Docker",   pct: 70 },
-    { name: "Linux",    pct: 80 },
-    { name: "Figma",    pct: 75 },
-    { name: "Firebase", pct: 68 },
-  ]},
-];
+  { 
+    category: "Data Analysis",  
+    icon: "", 
+    items: [
+      { name: "Python", pct: 90 },
+      { name: "R", pct: 70 },
+      { name: "SQL", pct: 75 },
+      { name: "Pandas", pct: 88 },
+      { name: "NumPy", pct: 80 },
+      { name: "Data Visualization", pct: 82 },
+    ]
+  },
 
+  { 
+    category: "Frontend & Development", 
+    icon: "", 
+    items: [
+      { name: "React", pct: 80 },
+      { name: "Next.js", pct: 75 },
+      { name: "TypeScript", pct: 70 },
+      { name: "Tailwind CSS", pct: 85 },
+      { name: "PySide6", pct: 72 },
+      { name: "UI/UX Design", pct: 80 },
+    ]
+  },
+
+  { 
+    category: "Tools & Technologies", 
+    icon: "", 
+    items: [
+      { name: "Git", pct: 85 },
+      { name: "Docker", pct: 50 },
+      { name: "Figma", pct: 80 },
+      { name: "PyTorch", pct: 72 },
+      { name: "REST APIs", pct: 50 },
+      { name: "GitHub", pct: 85 },
+    ]
+  },
+];
 const TIMELINE = [
-  { year: "2024", role: "Research Engineer Intern", org: "BioTech Lab, Amsterdam", desc: "Built ML pipelines for genomic data analysis, reducing processing time by 40%." },
-  { year: "2023", role: "Data Science Intern",       org: "CyberSec Startup, Utrecht", desc: "Developed anomaly detection models for network traffic with 91% precision." },
-  { year: "2022", role: "BSc Computer Science",      org: "Radboud University",     desc: "Graduated with honours. Thesis on neural signal classification." },
+  {
+    year: "2023",
+    role: "Secondary School Graduate",
+    org: "I Liceum Ogólnokształcące im. Mikołaja Kopernika, Lubin",
+    desc: "Graduated with a Mathematics-Biology profile, focusing on analytical thinking and scientific foundations."
+  },
+  {
+    year: "2024",
+    role: "Mechatronics Student",
+    org: "Fontys University of Applied Sciences",
+    desc: "Completed a year in Mechatronics, building experience in engineering principles, problem-solving, and technical systems."
+  },
+  {
+    year: "2025",
+    role: "ICT Student - Delta Excellence Programme",
+    org: "Fontys University of Applied Sciences",
+    desc: "Currently studying ICT while participating in the Delta Excellence programme, working on research-driven and interdisciplinary technology projects."
+  },
 ];
 
 /* ─── HOOKS ──────────────────────────────────────────────── */
@@ -218,7 +246,7 @@ export default function App() {
             </div>
             <div className="nav__brand-text">
               <span className="nav__brand-name">Malwina</span>
-              <span className="nav__brand-role">Data Scientist</span>
+              <span className="nav__brand-role">Data Analyst</span>
             </div>
           </div>
           <div className="nav__pill">
@@ -253,25 +281,29 @@ export default function App() {
             <span className="hero__eyebrow">Hi, I'm Malwina</span>
           </div>
           <h1 className="hero__title">
-            Data Scientist &amp;<br />Research Engineer
+            Data Analyst &amp;<br /> Software Developer
           </h1>
           <p className="hero__bio">
-            I transform data into meaningful insights and build intelligent solutions.
-            Passionate about bioinformatics, astronomy, and cybersecurity, with a love
-            for clean interfaces and impactful design.
+           ICT student and aspiring researcher passionate about turning ideas into impactful solutions through data analysis, intelligent systems, and user-centered design.
           </p>
           <div className="hero__actions" style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
             <button className="btn btn--primary" onClick={() => scrollTo("Contact")}>
               Contact Me →
             </button>
             <div className="hero__socials">
-              <a href="https://github.com/malwina" target="_blank" rel="noreferrer" className="social-icon" aria-label="GitHub">
+              <a href="https://github.com/MalRac250" target="_blank" rel="noreferrer" className="social-icon" aria-label="GitHub">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
               </a>
-              <a href="mailto:malwina@example.com" className="social-icon" aria-label="Email">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+             <a
+                href="mailto:raczynska.malwina.1lo@gmail.com?subject=Portfolio Contact&body=Hi Malwina,%0D%0A%0D%0AI would like to get in touch regarding..."
+                className="social-icon"
+                aria-label="Email"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
               </a>
-              <a href="https://linkedin.com/in/malwina" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/malwina-raczy%C5%84ska-523082364/?locale=pl" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               </a>
             </div>
@@ -308,18 +340,31 @@ export default function App() {
                 <div className="project-featured__badge">Featured Project</div>
                 <span className="project-year">{PROJECTS[0].year}</span>
               </div>
+
               <h3 className="project-featured__name">{PROJECTS[0].name}</h3>
+
               <p className="project-featured__desc">{PROJECTS[0].desc}</p>
+
               <div className="tags">
-                {PROJECTS[0].tags.map((t) => <span key={t} className="tag">{t}</span>)}
+                {PROJECTS[0].tags.map((t) => (
+                  <span key={t} className="tag">{t}</span>
+                ))}
               </div>
+
               <div className="project-featured__links">
-                <a href="#" className="btn btn--outline btn--sm">View Project →</a>
-                <a href="#" className="btn btn--ghost btn--sm">GitHub</a>
+                <a
+                  href={PROJECTS[0].link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn--outline btn--sm"
+                >
+                  View Project →
+                </a>
               </div>
             </div>
+
             <div className="project-featured__image">
-              <img src="/images/banner.png" alt={PROJECTS[0].name} />
+              <img src={PROJECTS[0].image} alt={PROJECTS[0].name} />
               <div className="project-featured__image-overlay" />
             </div>
           </div>
@@ -333,12 +378,25 @@ export default function App() {
                   <div className="project-card__icon">{p.icon}</div>
                   <span className="project-year">{p.year}</span>
                 </div>
+
                 <h3 className="project-card__name">{p.name}</h3>
+
                 <p className="project-card__desc">{p.desc}</p>
+
                 <div className="tags">
-                  {p.tags.map((t) => <span key={t} className="tag">{t}</span>)}
+                  {p.tags.map((t) => (
+                    <span key={t} className="tag">{t}</span>
+                  ))}
                 </div>
-                <a href="#" className="project-card__link">View project →</a>
+
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-card__link"
+                >
+                  View project →
+                </a>
               </div>
             </AnimatedSection>
           ))}
@@ -431,9 +489,9 @@ export default function App() {
         <div className="contact-layout">
           <AnimatedSection delay={80} className="contact-cards">
             {[
-              { label: "GitHub",   href: "https://github.com/malwina",     sub: "github.com/malwina",      icon: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> },
-              { label: "Email",    href: "mailto:malwina@example.com",      sub: "malwina@example.com",     icon: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> },
-              { label: "LinkedIn", href: "https://linkedin.com/in/malwina", sub: "linkedin.com/in/malwina", icon: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
+              { label: "GitHub",   href: "https://github.com/MalRac250",     sub: "github.com/MalRac250",      icon: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> },
+              { label: "Email",    href: "mailto:raczysnka.malwina.1lo@gmail.com",      sub: "raczysnka.malwina.1lo@gmail.com",     icon: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/malwina-raczy%C5%84ska-523082364/?locale=pl", sub: "linkedin.com/in/malwina-raczyńska-523082364", icon: <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1。771 ２４h２０．４５１C２３．２ ２４ ２４ ２３．２２７ ２４ ２２．２７１V１．７２９C２４ .７７４ ２３．２ ０ ２２．２２２ ０h．００３z"/></svg> },
             ].map((c) => (
               <a key={c.label} href={c.href} target="_blank" rel="noreferrer" className="contact-card">
                 <div className="contact-card__icon">{c.icon}</div>
@@ -451,7 +509,7 @@ export default function App() {
               <div className="form-success">
                 <div className="form-success__icon">✓</div>
                 <h3>Message sent!</h3>
-                <p>Thanks for reaching out — I'll get back to you soon.</p>
+                <p>Thanks for reaching out! I'll get back to you soon.</p>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleForm}>
@@ -495,7 +553,7 @@ export default function App() {
             </div>
             <span className="footer__name">Malwina</span>
           </div>
-          <p className="footer__copy">© 2025 Malwina. All rights reserved.</p>
+          <p className="footer__copy">© 2026 Malwina. All rights reserved.</p>
         </div>
       </footer>
     </div>
