@@ -14,7 +14,7 @@ A personal portfolio website built with React and Vite, showcasing projects, ski
 [![CSS3](https://img.shields.io/badge/CSS3-Custom_Properties-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Formspree](https://img.shields.io/badge/Formspree-Contact_Form-E04E39?style=flat-square)](https://formspree.io)
 
-[Live Demo](#) · [View Resume](public/resume.pdf) · [Contact](mailto:raczynska.malwina.1lo@gmail.com)
+[Live Demo](https://portfoliomalwina.vercel.app/) · [View Resume](public/resume.pdf) · [Contact](mailto:raczynska.malwina.1lo@gmail.com)
 
 </div>
 
