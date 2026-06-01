@@ -2,7 +2,7 @@
 
 <img src="public/images/logo.png" alt="Malwina Logo" width="64" height="64" />
 
-# Malwina Raczyńska — Portfolio
+# Malwina Raczyńska - Portfolio
 
 **Data Analyst & Software Developer**
 
